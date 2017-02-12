@@ -1,3 +1,4 @@
 module.exports = {
-    "componentName":"'my-home'"
+    "componentName":"'my-home'",
+    "componentTag":"my-home"
 }
