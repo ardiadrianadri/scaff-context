@@ -1,6 +1,8 @@
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var helpers = require('./helpers');
+var configApp = require('./configFile');
+
+process.traceDeprecation = true
 
 module.exports = {
   entry: {
@@ -44,6 +46,9 @@ module.exports = {
 
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills','sytles']
+    }),
+    new webpack.DefinePlugin({
+      ENV: configApp
     })
   ]
 };

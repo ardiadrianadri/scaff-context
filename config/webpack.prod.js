@@ -13,8 +13,8 @@ module.exports = webpackMerge(commonConfig, {
   output: {
     path: helpers.root('dist'),
     publicPath: '/',
-    filename: '[name].[hash].js',
-    chunkFilename: '[id].[hash].chunk.js'
+    filename: '[name].js',
+    chunkFilename: '[id].chunk.js'
   },
 
   module: {
@@ -25,11 +25,7 @@ module.exports = webpackMerge(commonConfig, {
         exclude: [/\.(spec|e2e)\.ts$/]
       },{
         test: /\.html$/,
-        loader: 'html-loader',
-        query: {
-          minimize:true,
-          caseSensitive:true
-        }
+        loader: 'html-loader?minimize=true&caseSensitive=true'
       }]
   },
   plugins: [
