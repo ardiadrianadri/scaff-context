@@ -10,7 +10,6 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "outDir": "lib",
-    "rootDir": ".",
     "mapRoot": "",
     "baseUrl": "",
     "skipLibCheck": true,

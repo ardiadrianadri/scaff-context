@@ -1,7 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var helpers = require('./helpers');
-var configApp = require ('./configFile.js');
 
 module.exports = {
   entry: {
@@ -45,15 +44,6 @@ module.exports = {
 
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills','sytles']
-    }),
-
-    new HtmlWebpackPlugin({
-      template: 'src/index.ejs',
-      component: '<'+configApp.componentTag+'>Loading...</'+configApp.componentTag+'>'
-    }),
-
-    new webpack.DefinePlugin({
-      ENV: configApp
     })
   ]
 };

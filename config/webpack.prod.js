@@ -5,12 +5,11 @@ var commonConfig = require('./webpack.common.js');
 var helpers = require('./helpers');
 var AotPlugin = require ('@ngtools/webpack').AotPlugin;
 var path = require('path');
+var aotPath_bad = '/Volumes/Seagate Expansion Drive/proyectos/AngularROR/Components/scaff-context/src/app/app.module#AppModule';
+var aotPath = path.join(__dirname,'../src/app/app.module') + '#AppModule';
 
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
-  entry: {
-    'app': './src/main-aot.ts'
-  },
   output: {
     path: helpers.root('dist'),
     publicPath: '/',
@@ -47,7 +46,7 @@ module.exports = webpackMerge(commonConfig, {
     }),
     new AotPlugin({
       tsConfigPath: './tsconfig-aot.json',
-      entryModule: path.resolve(process.cwd()) + '/src/app/app.module#AppModule',
+      entryModule: aotPath,
       skipCodeGeneration: true
     })
   ]
