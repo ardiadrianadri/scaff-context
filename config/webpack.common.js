@@ -6,9 +6,6 @@ process.traceDeprecation = true
 
 module.exports = {
   entry: {
-    'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
-    'sytles': './src/styles.ts',
     'app': './src/main.ts'
   },
 
@@ -45,7 +42,7 @@ module.exports = {
     ),
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills','sytles']
+      name: ['app']
     }),
     new webpack.DefinePlugin({
       ENV: configApp
